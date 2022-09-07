@@ -1,0 +1,81 @@
+.current:hover {
+  border-color: rgb(237, 229, 63);
+}
+.search button {
+  border: 3px solid rgb(112, 133, 236);
+  line-height: 1.8;
+  padding: 0 30px;
+  font-size: 18px;
+  text-align: center;
+  color: rgb(112, 133, 236);
+  margin: 20px;
+  border-radius: 10px;
+  background-color: #f8f9fa;
+}
+.search button:hover {
+  border-color: rgb(237, 229, 63);
+}
+input {
+  background-color: #f8f9fa;
+  border: 3px solid rgb(112, 133, 236);
+  border-radius: 10px;
+  color: rgb(112, 133, 236);
+
+  padding: 4.5px 50px;
+}
+.location {
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  text-transform: capitalize;
+}
+.card-body {
+  display: block;
+  text-align: center;
+  border: 3px solid rgb(112, 133, 236);
+  border-radius: 10px;
+}
+ul {
+  padding-left: 0;
+}
+li {
+  font-size: 18px;
+  list-style-type: none;
+}
+.fa-sun {
+  font-size: 160px;
+  color: rgb(237, 229, 63);
+}
+.fa-cloud {
+  font-size: 30px;
+  color: rgb(112, 133, 236);
+}
+.fa-cloud-sun {
+  font-size: 30px;
+  color: rgb(112, 133, 236);
+}
+.fa-cloud-rain {
+  font-size: 30px;
+  color: rgb(112, 133, 236);
+}
+.fa-cloud-sun-rain {
+  font-size: 30px;
+  color: rgb(112, 133, 236);
+}
+.col {
+  font-size: 18px;
+  text-align: center;
+}
+.h5 {
+  text-align: center;
+}
+.row {
+  margin: 26px;
+}
+body {
+  margin-top: 22px;
+}
+.link-source {
+  margin-top: 30px;
+  margin-left: 220px;
+}
