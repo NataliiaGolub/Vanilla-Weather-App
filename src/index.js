@@ -55,13 +55,40 @@ function showTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
   let showTemp = document.querySelector("#temperatureCur");
 
-  showTemp.innerHTML = temperature + " °C";
+  showTemp.innerHTML =
+    temperature +
+    ` <a href="javascript:celsiusDegree()">°C</a> / <a href="#fahrDegree()">°F</a>`;
   let cityName = response.data.name;
   let showCityName = document.querySelector("#showCity");
 
   showCityName.innerHTML = cityName;
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+  document.querySelector("#wind").innerHTML = Math.round(
+    response.data.wind.speed
+  );
+  document.querySelector("#sky").innerHTML =
+    response.data.weather[0].description;
 }
-
+//
+function celsiusDegree(event) {
+  event.preventDefault();
+  let temperature = Math.round(data.main.temp);
+  let showTemp = document.querySelector("#temperatureCur");
+  let celsiusTemp = Math.round((temperature - 32) / 1.8);
+  showTemp.innerHTML = `${celsiusTemp}`;
+}
+let celsius = document.querySelector("#temperatureCur");
+celsius.addEventListener("click", celsiusDegree);
+//
+function fahrDegree(event) {
+  event.preventDefault();
+  let temperature = Math.round(data.main.temp);
+  let showTemp = document.querySelector("#temperatureCur");
+  let fahrTemp = Math.round(temperature * 1.8 + 32);
+  showTemp.innerHTML = `${fahrTemp}`;
+}
+let fahrenheit = document.querySelector("#temperatureCur");
+fahrenheit.addEventListener("click", fahrDegree);
 //
 function searchCity(event) {
   event.preventDefault();
