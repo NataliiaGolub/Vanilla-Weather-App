@@ -30,6 +30,8 @@ let hour = week.getHours();
 hour = hour <= 9 ? "0" + hour : hour;
 let minutes = week.getMinutes();
 minutes = minutes <= 9 ? "0" + minutes : minutes;
+
+//
 function daysWeek(week) {
   let days = [
     "Sunday",
@@ -68,7 +70,15 @@ function showTemperature(response) {
   );
   document.querySelector("#sky").innerHTML =
     response.data.weather[0].description;
+
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
+
 //
 function celsiusDegree(event) {
   event.preventDefault();

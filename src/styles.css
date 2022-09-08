@@ -34,6 +34,7 @@ input {
   text-align: center;
   border: 3px solid rgb(112, 133, 236);
   border-radius: 10px;
+  background-color: white;
 }
 ul {
   padding-left: 0;
@@ -83,9 +84,10 @@ body {
   font-size: 16px;
   color: rgb(86, 82, 82);
 }
-#celsius-link {
-  font-size: 24px;
-}
+
 #temperatureCur {
   font-size: 36px;
+}
+.col-6 {
+  padding-bottom: 25px;
 }
