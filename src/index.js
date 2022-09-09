@@ -54,24 +54,20 @@ document.getElementById("dayWeek").innerHTML =
 //
 
 function showTemperature(response) {
-  let temperature = Math.round(response.data.main.temp);
   let showTemp = document.querySelector("#temperatureCur");
-
-  showTemp.innerHTML =
-    temperature +
-    ` <a href="javascript:celsiusDegree()">°C</a> / <a href="#fahrDegree()">°F</a>`;
-  let cityName = response.data.name;
   let showCityName = document.querySelector("#showCity");
+  let cityName = response.data.name;
+  let iconElement = document.querySelector("#icon");
 
+  celsiusTemperature = response.data.main.temp;
   showCityName.innerHTML = cityName;
+  showTemp.innerHTML = Math.round(celsiusTemperature);
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
   document.querySelector("#sky").innerHTML =
     response.data.weather[0].description;
-
-  let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
@@ -80,25 +76,31 @@ function showTemperature(response) {
 }
 
 //
-function celsiusDegree(event) {
+
+function showFahrDegree(event) {
   event.preventDefault();
-  let temperature = Math.round(data.main.temp);
-  let showTemp = document.querySelector("#temperatureCur");
-  let celsiusTemp = Math.round((temperature - 32) / 1.8);
-  showTemp.innerHTML = `${celsiusTemp}`;
+  let temperatureElement = document.querySelector("#temperatureCur");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrTemp = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrTemp);
 }
-let celsius = document.querySelector("#temperatureCur");
-celsius.addEventListener("click", celsiusDegree);
 //
-function fahrDegree(event) {
+function showCelsiusDegree(event) {
   event.preventDefault();
-  let temperature = Math.round(data.main.temp);
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
   let showTemp = document.querySelector("#temperatureCur");
-  let fahrTemp = Math.round(temperature * 1.8 + 32);
-  showTemp.innerHTML = `${fahrTemp}`;
+  showTemp.innerHTML = Math.round(celsiusTemperature);
 }
-let fahrenheit = document.querySelector("#temperatureCur");
-fahrenheit.addEventListener("click", fahrDegree);
+
+let celsiusTemperature = null;
+
+let fahrenheitLink = document.querySelector("#fahr-link");
+fahrenheitLink.addEventListener("click", showFahrDegree);
+//
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", showCelsiusDegree);
 //
 function searchCity(event) {
   event.preventDefault();
@@ -106,14 +108,6 @@ function searchCity(event) {
   let city = searchInput.value;
   let apiKey = "4a4b1d82c8a7fedfd1508e6662f1d50f";
   let apiMainUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  //let h3 = document.querySelector("h3");
-
-  //if (searchInput.value) {
-  //h3.innerHTML = searchInput.value;
-  //} else {
-  //h3.innerHTML = null;
-  //alert("Please type a city");
-  //}
 
   axios.get(apiMainUrl).then(showTemperature);
 }
@@ -138,3 +132,5 @@ searchTown.addEventListener("click", searchCity);
 
 let currentButton = document.querySelector("#input-current");
 currentButton.addEventListener("click", getLocation);
+
+searchCity(`Toronto`);

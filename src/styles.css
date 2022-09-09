@@ -34,7 +34,7 @@ input {
   text-align: center;
   border: 3px solid rgb(112, 133, 236);
   border-radius: 10px;
-  background-color: white;
+  background-color: rgba(255, 255, 0, 0.163);
 }
 ul {
   padding-left: 0;
@@ -42,6 +42,7 @@ ul {
 li {
   font-size: 18px;
   list-style-type: none;
+  padding-bottom: 10px;
 }
 .fa-sun {
   font-size: 100px;
@@ -71,7 +72,7 @@ li {
   text-align: center;
 }
 .row {
-  margin: 26px;
+  margin: 24px;
 }
 body {
   margin-top: 22px;
@@ -87,7 +88,19 @@ body {
 
 #temperatureCur {
   font-size: 36px;
+  background-color: rgba(255, 255, 0, 0);
 }
 .col-6 {
-  padding-bottom: 25px;
+  padding-bottom: 10px;
+}
+.degree {
+  font-size: 24px;
+  vertical-align: 10px;
+}
+#currentDay {
+  font-size: 20px;
+  vertical-align: -10px;
+}
+.col-sm-6 {
+  padding-bottom: 20px;
 }
