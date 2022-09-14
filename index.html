@@ -86,11 +86,20 @@
           </div>
           <div class="col-sm-6">
             <div class="card-body">
-              <div class="row">
-                <div class="col"><h5>Mon.</h5></div>
-                <div class="col"><i class="fa-solid fa-cloud"></i></div>
-                <div class="col">34°C</div>
+                              <div class="weather-forecast">
+                                <div class="row">
+                <div class="weather-forecast-date"><h5>Mon.</h5></div>
+                <div class="weather-forecast-icon"><img
+                  src="http://openweathermap.org/img/wn/50d@2x.png"
+                  alt=""
+                  width="42"/>
+                </div>
+                <div class="weather-forecast-temperatures">
+                  <span class=weather-forecast-temperature-max>34°C / </span>
+                 <span class=weather-forecast-temperature-min>12°C</span>
+                </div>
               </div>
+              
               <div class="row">
                 <div class="col"><h5>Tue.</h5></div>
                 <div class="col">
@@ -121,12 +130,14 @@
           </div>
         </div>
       </div>
-    </div></div>
-    <span class="link-source">
+      </div>
+    </div> 
+    <small><span class="link-source">
       <a href="https://github.com/NataliiaGolub/Vanilla-Weather-App" target="_blank">Open-source code</a>
 <strong> by Nataliia Golub</strong> 
 
-    </span>
+    </span></small></div>
+   
     
     <script src="src/index.js"></script>
   </body>
