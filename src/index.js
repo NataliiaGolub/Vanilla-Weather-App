@@ -52,7 +52,36 @@ function daysWeek(week) {
 document.getElementById("dayWeek").innerHTML =
   daysWeek(week) + " " + hour + ":" + minutes;
 //
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
 
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+
+  let forecastHTML = ``;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `      <div class="row">
+                <div class="weather-forecast-date"><h5>${day}</h5></div>
+                <div class="weather-forecast-icon"><img
+                  src="http://openweathermap.org/img/wn/50d@2x.png"
+                  alt=""
+                  width="42"/>
+                </div>
+                <div class="weather-forecast-temperatures">
+                  <span class=weather-forecast-temperature-max>34°C / </span>
+                 <span class=weather-forecast-temperature-min>12°C</span>
+                </div>
+              </div>
+  `;
+  });
+
+  forecastHTML = forecastHTML + ``;
+  forecastElement.innerHTML = forecastHTML;
+  console.log(forecastHTML);
+}
+
+//
 function showTemperature(response) {
   let showTemp = document.querySelector("#temperatureCur");
   let showCityName = document.querySelector("#showCity");
@@ -102,6 +131,7 @@ fahrenheitLink.addEventListener("click", showFahrDegree);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsiusDegree);
 //
+
 function searchCity(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#search-text-input");
@@ -133,4 +163,4 @@ searchTown.addEventListener("click", searchCity);
 let currentButton = document.querySelector("#input-current");
 currentButton.addEventListener("click", getLocation);
 
-searchCity(`Toronto`);
+displayForecast();
