@@ -27,6 +27,7 @@ document.getElementById("currentDay").innerHTML = formatDate(now);
 
 let week = new Date();
 let hour = week.getHours();
+
 hour = hour <= 9 ? "0" + hour : hour;
 let minutes = week.getMinutes();
 minutes = minutes <= 9 ? "0" + minutes : minutes;
@@ -69,20 +70,20 @@ function displayForecast(response) {
 
   let forecastHTML = ``;
   forecast.forEach(function (forecastDay, index) {
-    if (index < 6) {
+    if (index < 5) {
       forecastHTML =
         forecastHTML +
         `      <div class="row">
-                <div class="weather-forecast-date"><h5>${formatDay(
+                <div class="weather-forecast-date"><strong>${formatDay(
                   forecastDay.dt
-                )}</h5></div>
+                )}</strong></div>
                 
                 <div class="weather-forecast-icon"><img
                   src="http://openweathermap.org/img/wn/${
                     forecastDay.weather[0].icon
                   }@2x.png"
                   alt=""
-                  width="42"/>
+                  width="52" style="vertical-align:middle"/>
                 </div>
                 <div class="weather-forecast-temperatures">
                   <span class=weather-forecast-temperature-max>${Math.round(
@@ -131,39 +132,40 @@ function showTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
-  console.log(response.data);
+  //console.log(response.data);
   getForecast(response.data.coord);
 }
 
 //
 
-function showFahrDegree(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperatureCur");
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let fahrTemp = (celsiusTemperature * 9) / 5 + 32;
-  temperatureElement.innerHTML = Math.round(fahrTemp);
-}
+//function showFahrDegree(event) {
+//event.preventDefault();
+//let temperatureElement = document.querySelector("#temperatureCur");
+//celsiusLink.classList.remove("active");
+//fahrenheitLink.classList.add("active");
+//let fahrTemp = (celsiusTemperature * 9) / 5 + 32;
+//temperatureElement.innerHTML = Math.round(fahrTemp);
+//}
 //
-function showCelsiusDegree(event) {
-  event.preventDefault();
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-  let showTemp = document.querySelector("#temperatureCur");
-  showTemp.innerHTML = Math.round(celsiusTemperature);
-}
+///function showCelsiusDegree(event) {
+//event.preventDefault();
+//celsiusLink.classList.add("active");
+//fahrenheitLink.classList.remove("active");
+// let showTemp = document.querySelector("#temperatureCur");
+// showTemp.innerHTML = Math.round(celsiusTemperature);
+//}
 
-let celsiusTemperature = null;
+//let celsiusTemperature = null;
 
-let fahrenheitLink = document.querySelector("#fahr-link");
-fahrenheitLink.addEventListener("click", showFahrDegree);
+//let fahrenheitLink = document.querySelector("#fahr-link");
+//fahrenheitLink.addEventListener("click", showFahrDegree);
 //
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", showCelsiusDegree);
+//let celsiusLink = document.querySelector("#celsius-link");
+//celsiusLink.addEventListener("click", showCelsiusDegree);
 //
 
 function searchCity(event) {
+  event.preventDefault();
   let searchInput = document.querySelector("#search-text-input");
   let city = searchInput.value;
   let apiKey = "4a4b1d82c8a7fedfd1508e6662f1d50f";
@@ -192,6 +194,9 @@ searchTown.addEventListener("click", searchCity);
 
 let currentButton = document.querySelector("#input-current");
 currentButton.addEventListener("click", getLocation);
+
+let searchCityNew = document.querySelector("input-button");
+searchCityNew.addEventListener("click", searchCity);
 
 searchCity("Toronto");
 //displayForecast();

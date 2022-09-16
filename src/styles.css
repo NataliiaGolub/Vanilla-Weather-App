@@ -1,25 +1,27 @@
 .current:hover {
-  border-color: rgb(237, 229, 63);
+  border-color: #fb8122;
 }
+
 .search button {
-  border: 3px solid rgb(112, 133, 236);
+  border: 3px solid #fbeec1;
   line-height: 1.8;
   padding: 0 30px;
   font-size: 18px;
   text-align: center;
-  color: rgb(112, 133, 236);
+  color: #31525b;
   margin: 20px;
   border-radius: 10px;
-  background-color: #f8f9fa;
+  background-color: #fbeec1;
 }
 .search button:hover {
-  border-color: rgb(237, 229, 63);
+  border-color: #fb8122;
+  outline: 0;
 }
 input {
-  background-color: #f8f9fa;
-  border: 3px solid rgb(112, 133, 236);
+  background-color: #fbeec1;
+  border: 3px solid #fbeec1;
   border-radius: 10px;
-  color: rgb(112, 133, 236);
+  color: #31525b;
 
   padding: 4.5px 50px;
 }
@@ -32,9 +34,11 @@ input {
 .card-body {
   display: block;
   text-align: center;
-  border: 3px solid rgb(112, 133, 236);
+  border: 3px solid #659dbd;
   border-radius: 10px;
-  background-color: rgba(255, 255, 0, 0.163);
+  background-color: #659dbd;
+  padding: 5px;
+  color: #fbeec1;
 }
 ul {
   padding-left: 0;
@@ -44,26 +48,7 @@ li {
   list-style-type: none;
   padding-bottom: 10px;
 }
-.fa-sun {
-  font-size: 100px;
-  color: rgb(237, 229, 63);
-}
-.fa-cloud {
-  font-size: 30px;
-  color: rgb(112, 133, 236);
-}
-.fa-cloud-sun {
-  font-size: 30px;
-  color: rgb(112, 133, 236);
-}
-.fa-cloud-rain {
-  font-size: 30px;
-  color: rgb(112, 133, 236);
-}
-.fa-cloud-sun-rain {
-  font-size: 30px;
-  color: rgb(112, 133, 236);
-}
+
 .col {
   font-size: 18px;
   text-align: center;
@@ -72,7 +57,8 @@ li {
   text-align: center;
 }
 .row {
-  margin: 24px;
+  margin: 0px;
+  text-align: center;
 }
 body {
   margin-top: 22px;
@@ -82,16 +68,20 @@ body {
   margin-left: 220px;
 }
 #description {
-  font-size: 16px;
-  color: rgb(86, 82, 82);
+  font-size: 14px;
+  color: #fbeec1;
+  padding-right: 48px;
 }
 
 #temperatureCur {
   font-size: 36px;
   background-color: rgba(255, 255, 0, 0);
+  color: #fbeec1;
 }
 .col-6 {
-  padding-bottom: 10px;
+  text-align: center;
+
+  padding-bottom: 0px;
 }
 .degree {
   font-size: 24px;
@@ -108,20 +98,39 @@ li:first-letter {
   text-transform: capitalize;
 }
 .weather-forecast {
-  margin-top: 20px;
+  display: block;
+  margin-top: 0px;
   text-align: center;
-  color: #000;
-}
-
-.weather-forecast-date {
-  font-size: 16px;
-  opacity: 1;
+  color: #fbeec1;
+  padding-left: 0px;
 }
 
 .weather-forecast-temperature-min {
   opacity: 0.5;
 }
 
+.weather-forecast-date {
+  font-size: 18px;
+  text-align: center;
+  padding-right: 42px;
+  padding-top: 14px;
+  padding-left: 22%;
+  opacity: 1;
+}
 .weather-forecast-temperatures {
   font-size: 16px;
+  text-align: center;
+  padding-left: 46px;
+  padding-top: 14px;
+}
+.card {
+  background-color: #fbeec1;
+  background-image: linear-gradient(#daad86, #fbeec1);
+}
+#left-block {
+  text-align: center;
+  padding-left: 70px;
+}
+#right-block {
+  text-align: center;
 }

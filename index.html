@@ -24,7 +24,7 @@
     ></script>
     <link href="src/styles.css" rel="stylesheet" type="text/css" />
     
-    <title>Weather</title>
+    <title>Weather Forecast</title>
   </head>
   <body>
      
@@ -32,16 +32,16 @@
       <div class="card">
         <form class="search" id="search-form">
           <div class="container text-center">
-            <button class="current-btn" id="input-current" type="submit">current</button>
+            <button class="current-btn" id="input-current" type="submit">Current</button>
             <input
-              type="text"
+              type="text submit"
               placeholder="Search locations..."
               autocomplete="off"
               autofocus="on"
               id="search-text-input"
             />
-            <button type="submit" value="Search" id="input-button">
-              Search<i class="fas fa-search"></i>
+            <button class="search-btn" type="submit" id="input-button">
+              Search <i class="fas fa-search"></i>
             </button>
           </div>
         </form>
@@ -62,10 +62,10 @@
                        
                     <div class="left" >
                       <mark  id="temperatureCur"></mark>
-                      <span class="degree"><a href="#" id="celsius-link" class="active">°C</a> / <a href="#" id="fahr-link">°F</a></span>
+                      <span class="degree">°C</span>
                                           </div>
                                    
-                  <div class="row">
+                  <div class="row" id="left-block">
                   <div class="col-6"> 
                   <li>  
                 <img src="" alt="" id="icon" class="float-left" />
@@ -84,22 +84,12 @@
               </div>
             
           </div>
+          <div class="row" id="right-block"></div>
           <div class="col-sm-6">
             <div class="card-body">
                               <div class="weather-forecast" id="forecast">
-                                <div class="row">
-                <div class="weather-forecast-date"><h5>Mon.</h5></div>
-                <div class="weather-forecast-icon"><img
-                  src="http://openweathermap.org/img/wn/50d@2x.png"
-                  alt=""
-                  width="42"/>
-                </div>
-                <div class="weather-forecast-temperatures">
-                  <span class=weather-forecast-temperature-max>34°C / </span>
-                 <span class=weather-forecast-temperature-min>12°C</span>
-                </div>
-              </div>
-                                    
+                                
+                              </div>                       
             </div>
           </div>
         </div>
